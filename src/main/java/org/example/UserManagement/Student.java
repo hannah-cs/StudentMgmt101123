@@ -1,4 +1,5 @@
 package org.example.UserManagement;
+import org.example.CourseManagement.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
