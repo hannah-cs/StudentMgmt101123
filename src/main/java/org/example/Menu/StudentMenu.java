@@ -37,7 +37,6 @@ public class StudentMenu {
                 default :
                     System.out.println("Not a valid option.");
             }
-            exitLoop = true;
         }
     }
 }

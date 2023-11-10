@@ -38,6 +38,7 @@ public class CourseEnrollMenu {
                     System.out.println("Enrolled "+foundStudent.getName()+" in "+foundCourse.getName());
                 }
             }
+            exitLoop = true;
         }
     }
 }
