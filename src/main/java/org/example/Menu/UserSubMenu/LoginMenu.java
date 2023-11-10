@@ -1,9 +1,9 @@
-package org.example.Menu.UserMenu;
+package org.example.Menu.UserSubMenu;
 import org.example.UserManagement.*;
 
 import java.util.Scanner;
 
-public static class LoginMenu {
+public class LoginMenu {
     public void run() {
         boolean exitLoop = false;
         while (!exitLoop) {

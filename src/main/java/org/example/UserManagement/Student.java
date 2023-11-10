@@ -11,21 +11,23 @@ public class Student extends User {
     private int userId;
     public List<Course> enrolledCourses = new ArrayList<>();
     public Map<User, Student> userStudentMap = new HashMap<>();
-    public Map<Course, String> grades = new HashMap<>();
+    public Map<Course, Character> grades = new HashMap<>();
+    private User user;
 
     //constructor
-    public Student (String name, int userId){
+    public Student(String name, int userId) {
+        super("usernameNotSet", "passwordNotSet", UserRole.STUDENT);
         this.name = name;
         this.userId = userId;
-        for (User user : students){
-            if (userId == user.getId()){
-                userStudentMap.put(user, this);
+        for (User user : allUsers) {
+            if (userId == user.getId()) {
+                this.user = user;
+                break;
             }
         }
     }
 
     // getters and setters
-
     public String getName() {
         return name;
     }
