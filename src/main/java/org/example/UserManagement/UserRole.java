@@ -1,5 +1,5 @@
 package org.example.UserManagement;
 
-enum UserRole {
+public enum UserRole {
     ADMIN, TEACHER, STUDENT;
 }
