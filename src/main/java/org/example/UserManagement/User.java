@@ -24,7 +24,8 @@ public class User {
             this.username = username;
             this.password = password;
             this.userRole = userRole;
-            this.id = uid++;
+            uid++;
+            this.id = uid;
             allUsers.add(this);
             if (userRole.equals(UserRole.ADMIN)) {
                 admins.add(this);

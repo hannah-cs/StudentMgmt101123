@@ -11,14 +11,21 @@ public class Course {
     private String name;
     private static int uid = 0;
     private int id;
-    private static List<Course> allCourses = new ArrayList<>();
+    public static List<Course> allCourses = new ArrayList<>();
     private List<Student> enrolledStudents = new ArrayList<>();
 
     //constructor
     public Course(String name) {
         this.name = name;
-        this.id = uid++;
+        uid++;
+        this.id = uid;
         allCourses.add(this);
+    }
+
+    // enroll method
+    public void enroll(Student student){
+        this.enrolledStudents.add(student);
+        student.enrolledCourses.add(this);
     }
 
     // getters and setters

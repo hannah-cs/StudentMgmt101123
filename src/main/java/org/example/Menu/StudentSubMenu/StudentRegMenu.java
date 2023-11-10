@@ -19,6 +19,7 @@ public class StudentRegMenu {
             System.out.println("Enter student full name");
             String studentName = scanner.nextLine();
             Student student = new Student(studentName, studentUserId);
+            System.out.println(user.getId());
             System.out.println(studentName+" has been registered. Would you like to register another student? (y/n)");
             String goAgain = scanner.nextLine();
             if (goAgain.equals("n") || goAgain.equals("N")) {

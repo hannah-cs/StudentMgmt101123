@@ -1,4 +1,5 @@
 package org.example.Menu;
+import org.example.Menu.StudentSubMenu.CourseEnrollMenu;
 import org.example.Menu.StudentSubMenu.StudentRegMenu;
 import org.example.UserManagement.UserRole;
 
@@ -27,7 +28,8 @@ public class StudentMenu {
                     studentRegMenu.run();
                     break;
                 case "2" :
-                    //CourseEnrollmentMenu.run();
+                    CourseEnrollMenu courseEnrollMenu = new CourseEnrollMenu();
+                    courseEnrollMenu.run();
                     break;
                 case "3" :
                     //grade menu .run()
@@ -35,6 +37,7 @@ public class StudentMenu {
                 default :
                     System.out.println("Not a valid option.");
             }
+            exitLoop = true;
         }
     }
 }

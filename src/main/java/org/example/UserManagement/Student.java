@@ -9,8 +9,9 @@ public class Student extends User {
     // properties
     private String name;
     private int userId;
+    public static List<Student> allStudents = new ArrayList<>();
     public List<Course> enrolledCourses = new ArrayList<>();
-    public Map<User, Student> userStudentMap = new HashMap<>();
+    public static Map<User, Student> userStudentMap = new HashMap<>();
     public Map<Course, Character> grades = new HashMap<>();
     private User user;
 
@@ -22,6 +23,7 @@ public class Student extends User {
         for (User user : allUsers) {
             if (userId == user.getId()) {
                 this.user = user;
+                userStudentMap.put(user, this);
                 break;
             }
         }
