@@ -1,7 +1,7 @@
 package org.example.Menu;
 import java.util.Scanner;
 
-public static class RootMenu {
+public class RootMenu {
     public void run() {
         boolean exitLoop = false;
         while (!exitLoop) {
@@ -14,19 +14,22 @@ public static class RootMenu {
             String nextStep = "";
             switch (choice) {
                 case "1":
-                    UserMenu.run();
+                    UserMenu userMenu = new UserMenu();
+                    userMenu.run();
                     break;
                 case "2":
-                    StudentMenu.run();
+                    StudentMenu studentMenu = new StudentMenu();
+                    studentMenu.run();
                     break;
-                case "Q" :
+                case "Q":
                     exitLoop = true;
                     break;
-                case "q" :
+                case "q":
                     exitLoop = true;
                     break;
                 default:
                     System.out.println("Not a valid option");
             }
         }
+    }
 }

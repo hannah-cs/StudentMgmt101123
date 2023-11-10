@@ -12,13 +12,12 @@ public class User {
         private static int uid = 0;
         private int id;
 
-        private Map<String, String> loginCredentials = new HashMap<>();
-
         //user lists
         public static List<User> allUsers = new ArrayList<>();
         public static List<User> students = new ArrayList<>();
         public static List<User> teachers = new ArrayList<>();
         public static List<User> admins = new ArrayList<>();
+        private static Map<String, String> loginCredentials = new HashMap<>();
 
         // constructor
         public User(String username, String password, UserRole userRole) {
@@ -27,21 +26,19 @@ public class User {
             this.userRole = userRole;
             this.id = uid++;
             allUsers.add(this);
-            switch (userRole){
-                case (UserRole.ADMIN) : admins.add(this);
-                    break;
-                case (UserRole.TEACHER) : teachers.add(this);
-                    break;
-                case (UserRole.STUDENT) : students.add(this);
-                    break;
-                default :
+            if (userRole.equals(UserRole.ADMIN)) {
+                admins.add(this);
+            } else if (userRole.equals(UserRole.TEACHER)) {
+                teachers.add(this);
+            } else if (userRole.equals(UserRole.STUDENT)) {
+                students.add(this);
             }
             loginCredentials.put(username, password);
         }
 
         //register and log in
-        public boolean login(String username, String password){
-            if (loginCredentials.containsKey(username){
+        public static boolean login(String username, String password){
+            if (loginCredentials.containsKey(username)){
                 String correctPassword = loginCredentials.get(username);
                 if (correctPassword.equals(password)) {
                     return true;
@@ -50,7 +47,7 @@ public class User {
         return false;
         }
 
-        public User registerNewUser(String username, String password, UserRole userRole){
+        public static User registerNewUser(String username, String password, UserRole userRole){
             return new User(username, password, userRole);
         }
 

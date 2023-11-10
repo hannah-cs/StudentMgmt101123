@@ -1,4 +1,4 @@
-package org.example.Menu.UserMenu;
+package org.example.Menu.UserSubMenu;
 import org.example.UserManagement.*;
 
 import java.util.Scanner;
@@ -19,7 +19,7 @@ public class RegisterMenu {
             System.out.println("3. Student");
             System.out.println("Q to quit");
             String nextChoice = scanner.nextLine();
-            UserRole userRole;
+            UserRole userRole = UserRole.NOTASSIGNED;
             switch (nextChoice) {
                 case "Q":
                     exitLoop = true;
@@ -40,6 +40,15 @@ public class RegisterMenu {
                     System.out.println("Not a valid option.");
             }
             User.registerNewUser(user, pw, userRole);
+            System.out.println("Successfully registered new user.")
+                    if (userRole = UserRole.STUDENT){
+                        StudentRegMenu.run();
+                    }
+            System.out.println("Would you like to register another user? (y/n)");
+            String goAgain = scanner.nextLine();
+            if (goAgain.equals("n") || (goAgain.equals("N")) {
+                exitLoop = true;
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 package org.example.Menu;
-import org.example.Menu.UserMenu.*;
+import org.example.Menu.UserSubMenu.*;
 
 import java.util.Scanner;
 
@@ -14,16 +14,23 @@ public class UserMenu {
             System.out.println("Q to quit");
             String choice2 = scanner.nextLine();
             switch (choice2) {
-                case "1" : LoginMenu.run();
-                break;
-                case "2" : UserMenu.RegisterMenu.run();
-                break;
-                case "Q" : exitLoop = true;
-                break;
-                case "q" : exitLoop = true;
-                break;
-                default :
+                case "1":
+                    LoginMenu loginMenu = new LoginMenu();
+                    loginMenu.run();
+                    break;
+                case "2":
+                    RegisterMenu registerMenu = new RegisterMenu();
+                    registerMenu.run();
+                    break;
+                case "Q":
+                    exitLoop = true;
+                    break;
+                case "q":
+                    exitLoop = true;
+                    break;
+                default:
                     System.out.println("Not a valid option");
             }
         }
+    }
 }
