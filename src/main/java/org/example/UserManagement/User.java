@@ -1,6 +1,7 @@
 package org.example.UserManagement;
-
+import java.util.Map;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class User {
@@ -10,6 +11,8 @@ public class User {
         private UserRole userRole;
         private static int uid = 0;
         private int id;
+
+        private Map<String, String> loginCredentials = new HashMap<>();
 
         //user lists
         public static List<User> allUsers = new ArrayList<>();
@@ -33,6 +36,22 @@ public class User {
                     break;
                 default :
             }
+            loginCredentials.put(username, password);
+        }
+
+        //register and log in
+        public boolean login(String username, String password){
+            if (loginCredentials.containsKey(username){
+                String correctPassword = loginCredentials.get(username);
+                if (correctPassword.equals(password)) {
+                    return true;
+            }
+        }
+        return false;
+        }
+
+        public User registerNewUser(String username, String password, UserRole userRole){
+            return new User(username, password, userRole);
         }
 
         //getters and setters
