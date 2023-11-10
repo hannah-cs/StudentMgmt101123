@@ -20,6 +20,6 @@ public class LoginMenu {
             } else {
                 System.out.println("Invalid credentials.");
             }
-        }
+        } exitLoop = true;
     }
 }

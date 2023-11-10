@@ -1,5 +1,6 @@
 package org.example.Menu.UserSubMenu;
 import org.example.UserManagement.*;
+import org.example.Menu.StudentSubMenu.*;
 
 import java.util.Scanner;
 
@@ -40,13 +41,14 @@ public class RegisterMenu {
                     System.out.println("Not a valid option.");
             }
             User.registerNewUser(user, pw, userRole);
-            System.out.println("Successfully registered new user.")
-                    if (userRole = UserRole.STUDENT){
-                        StudentRegMenu.run();
+            System.out.println("Successfully registered new user.");
+                    if (userRole.equals(UserRole.STUDENT)){
+                        StudentRegMenu studentRegMenu = new StudentRegMenu();
+                        studentRegMenu.run();
                     }
             System.out.println("Would you like to register another user? (y/n)");
             String goAgain = scanner.nextLine();
-            if (goAgain.equals("n") || (goAgain.equals("N")) {
+            if (goAgain.equals("n") || goAgain.equals("N")) {
                 exitLoop = true;
             }
         }
