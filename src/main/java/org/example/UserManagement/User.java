@@ -4,26 +4,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    public class UserInfo {
+        // properties
         private String username;
         private String password;
         private UserRole userRole;
+        private static int uid = 0;
+        private int id;
 
+        //user lists
+        public static List<User> allUsers = new ArrayList<>();
+        public static List<User> students = new ArrayList<>();
+        public static List<User> teachers = new ArrayList<>();
+        public static List<User> admins = new ArrayList<>();
+
+        // constructor
         public User(String username, String password, UserRole userRole) {
             this.username = username;
             this.password = password;
             this.userRole = userRole;
-            UserLists.allUsers.add(this);
+            this.id = uid++;
+            allUsers.add(this);
             switch (userRole){
-                case (UserRole.ADMIN) : UserLists.admins.add(this);
+                case (UserRole.ADMIN) : admins.add(this);
                     break;
-                case (UserRole.TEACHER) : UserLists.teachers.add(this);
+                case (UserRole.TEACHER) : teachers.add(this);
                     break;
-                case (UserRole.STUDENT) : UserLists.students.add(this);
+                case (UserRole.STUDENT) : students.add(this);
                     break;
                 default :
             }
         }
+
+        //getters and setters
 
         public String getUsername() {
             return username;
@@ -48,12 +60,11 @@ public class User {
         public void setUserRole(UserRole userRole) {
             this.userRole = userRole;
         }
-    }
 
-    public class UserLists {
-    private static List<User> allUsers = new ArrayList<>();
-    private static List<User> students = new ArrayList<>();
-    private static List<User> teachers = new ArrayList<>();
-    private static List<User> admins = new ArrayList<>();
+        public int getId() {
+            return id;
+        }
+        public void setId(int id) {
+            this.id = id;
+        }
     }
-}
