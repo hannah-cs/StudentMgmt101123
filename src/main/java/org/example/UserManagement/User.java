@@ -1,4 +1,8 @@
 package org.example.UserManagement;
+import org.example.Data.DataManagement;
+
+import javax.xml.crypto.Data;
+import java.io.IOException;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +24,7 @@ public class User {
         private static Map<String, String> loginCredentials = new HashMap<>();
 
         // constructor
-        public User(String username, String password, UserRole userRole) {
+        public User(String username, String password, UserRole userRole) throws IOException {
             this.username = username;
             this.password = password;
             this.userRole = userRole;
@@ -48,8 +52,10 @@ public class User {
         return false;
         }
 
-        public static User registerNewUser(String username, String password, UserRole userRole){
-            return new User(username, password, userRole);
+        public static User registerNewUser(String username, String password, UserRole userRole) throws IOException {
+            User newUser = new User(username, password, userRole);
+            DataManagement.writeToFile(DataManagement.userData, "\n" + username + "," + password + "," + userRole);
+            return newUser;
         }
 
         //getters and setters

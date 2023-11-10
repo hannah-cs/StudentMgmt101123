@@ -1,10 +1,11 @@
 package org.example.Menu;
 import org.example.Menu.UserSubMenu.*;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class UserMenu {
-    public void run() {
+    public void run() throws IOException {
         boolean exitLoop = false;
         while (!exitLoop) {
             Scanner scanner = new Scanner(System.in);
