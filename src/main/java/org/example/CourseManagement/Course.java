@@ -13,7 +13,6 @@ public class Course {
     private int id;
     private static List<Course> allCourses = new ArrayList<>();
     private List<Student> enrolledStudents = new ArrayList<>();
-    private Map<Student, String> grades = new HashMap<>();
 
     //constructor
     public Course(String name) {
