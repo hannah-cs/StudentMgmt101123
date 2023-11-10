@@ -9,9 +9,9 @@ public class Student extends User {
     // properties
     private String name;
     private int userId;
-    private List<Course> courses = new ArrayList<>();
-    private Map<User, Student> userStudentMap = new HashMap<>();
-    private Map<Course, String> grades = new HashMap<>();
+    public List<Course> enrolledCourses = new ArrayList<>();
+    public Map<User, Student> userStudentMap = new HashMap<>();
+    public Map<Course, String> grades = new HashMap<>();
 
     //constructor
     public Student (String name, int userId){
@@ -41,4 +41,5 @@ public class Student extends User {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+
 }
