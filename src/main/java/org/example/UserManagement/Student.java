@@ -1,5 +1,8 @@
 package org.example.UserManagement;
 import org.example.CourseManagement.*;
+import org.example.Data.DataManagement;
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
@@ -16,7 +19,7 @@ public class Student extends User {
     private User user;
 
     //constructor
-    public Student(String name, int userId) {
+    public Student(String name, int userId) throws IOException {
         super("usernameNotSet", "passwordNotSet", UserRole.STUDENT);
         this.name = name;
         this.userId = userId;
@@ -27,6 +30,7 @@ public class Student extends User {
                 break;
             }
         }
+        DataManagement.writeToFile(DataManagement.studentData, "\n"+this.name+","+user.getId());
     }
 
     // getters and setters

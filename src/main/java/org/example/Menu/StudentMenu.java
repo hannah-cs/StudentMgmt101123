@@ -4,10 +4,11 @@ import org.example.Menu.StudentSubMenu.GradingMenu;
 import org.example.Menu.StudentSubMenu.StudentRegMenu;
 import org.example.UserManagement.UserRole;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class StudentMenu {
-    public void run() {
+    public void run() throws IOException {
         boolean exitLoop = false;
         while (!exitLoop) {
             Scanner scanner = new Scanner(System.in);

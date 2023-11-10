@@ -1,8 +1,10 @@
 package org.example.Menu;
+import java.io.IOException;
 import java.util.Scanner;
+import org.example.Data.DataManagement;
 
 public class RootMenu {
-    public void run() {
+    public void run() throws IOException {
         boolean exitLoop = false;
         while (!exitLoop) {
             Scanner scanner = new Scanner(System.in);

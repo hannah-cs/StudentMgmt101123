@@ -1,10 +1,11 @@
 package org.example.Menu.StudentSubMenu;
 import org.example.UserManagement.*;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class StudentRegMenu {
-    public void run() {
+    public void run() throws IOException {
         boolean exitLoop = false;
         while (!exitLoop) {
             Scanner scanner = new Scanner(System.in);
@@ -14,7 +15,7 @@ public class StudentRegMenu {
             String studentUsername = scanner.nextLine();
             System.out.println("Create student password");
             String studentPW = scanner.nextLine();
-            User user = new User(studentUsername, studentPW, UserRole.STUDENT);
+            User user = User.registerNewUser(studentUsername, studentPW, UserRole.STUDENT);
             int studentUserId = user.getId();
             System.out.println("Enter student full name");
             String studentName = scanner.nextLine();

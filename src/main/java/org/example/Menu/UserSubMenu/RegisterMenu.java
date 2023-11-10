@@ -1,11 +1,14 @@
 package org.example.Menu.UserSubMenu;
 import org.example.UserManagement.*;
 import org.example.Menu.StudentSubMenu.*;
+import org.example.Data.*;
 
+import javax.xml.crypto.Data;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class RegisterMenu {
-    public void run() {
+    public void run() throws IOException {
         boolean exitLoop = false;
         while (!exitLoop) {
             Scanner scanner = new Scanner(System.in);
