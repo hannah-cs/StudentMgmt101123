@@ -1,8 +1,6 @@
 package org.example.CourseManagement;
 import org.example.UserManagement.*;
 
-import java.util.HashMap;
-
 public class GradingSystem {
     private char letterGrade;
     public char pctToLetter(int percentage){
